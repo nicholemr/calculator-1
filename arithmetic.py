@@ -1,11 +1,4 @@
 """Math functions for calculator."""
-# a_variable = input("type a function")
-
-# num1 = a_variable[2]
-# num2 = a_variable[4]
-
-
-
 def add(num1, num2):
     """Return the sum of the two inputs."""
     summation = num1 + num2
@@ -48,5 +41,45 @@ def mod(num1, num2):
     mody = num1 % num2
     return mody
 
-# if '+' in a_variable:
-#     print(add(num1,num2))
+while True:
+
+    input_string = input(">")
+    input_list = input_string.split(" ")
+
+    if input_string == 'q':   
+        print("Program quit!")
+        break
+    
+    math_symbol = input_list[0]
+    num1 = int(input_list[1])
+    
+    try: 
+        num2 = int(input_list[2])
+    except: IndexError     
+
+    if math_symbol == '+':
+        print(add(num1, num2))
+
+    elif math_symbol == '-':
+
+        print(subtract(num1, num2))
+
+    elif math_symbol == '*':
+        print(multiply(num1, num2))
+
+    elif math_symbol == '/':
+        print(divide(num1, num2))
+
+    elif math_symbol == 'square':
+        print(square(num1))
+
+    elif math_symbol == 'cube':
+        print(cube(num1))
+
+    elif math_symbol == 'power':
+        print(power(num1, num2))
+
+    elif math_symbol == 'mod':
+        print(mod(num1, num2))
+
+
