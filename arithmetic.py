@@ -4,7 +4,6 @@ def add(num1, num2):
     summation = num1 + num2
     return summation
     
-
 def subtract(num1, num2):
     """Return the second number subtracted from the first."""
     minus = num1 - num2
@@ -52,8 +51,7 @@ while True:
     
     math_symbol = input_list[0]
     num1 = int(input_list[1])
-    # numberlist = [input_list:]
-
+  
     
     #Check if operator in input
     operators = ["+", "-", "*", "/", "square", "cube",  "power", "mod"]
@@ -70,7 +68,6 @@ while True:
     #         continue
             
 
-    
     try:
         num2 = int(input_list[2])
             
