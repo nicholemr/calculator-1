@@ -3,7 +3,7 @@ def add(num1, num2):
     """Return the sum of the two inputs."""
     summation = num1 + num2
     return summation
-
+    
 
 def subtract(num1, num2):
     """Return the second number subtracted from the first."""
@@ -36,11 +36,11 @@ def power(num1, num2):
     powered = num1 ** num2
     return powered
 
-def mod(num1, num2):
-    """Return the remainder of num1 / num2."""
-    mody = num1 % num2
-    return mody
 
+def num2error(input_list):
+    if len(input_list) < 3:
+        print("please provide a second number")
+    
 while True:
 
     input_string = input(">")
@@ -52,34 +52,56 @@ while True:
     
     math_symbol = input_list[0]
     num1 = int(input_list[1])
+    # numberlist = [input_list:]
+
     
-    try: 
+    #Check if operator in input
+    operators = ["+", "-", "*", "/", "square", "cube",  "power", "mod"]
+    if math_symbol not in operators:
+        print("Invalid operator")
+        continue
+    
+    #Check if num2 available for some operators
+    # operators_w_num2 = ["+", "-", "*", "/", "mod"]
+    # if math_symbol in operators_w_num2:
+        
+    #     if len(input_list) < 3:
+    #         print("need a second number!")
+    #         continue
+            
+
+    
+    try:
         num2 = int(input_list[2])
-    except: IndexError     
+            
+        if math_symbol == '+':
+            print(add(num1, num2))
+        elif math_symbol == '-':
+            print(subtract(num1, num2))
 
-    if math_symbol == '+':
-        print(add(num1, num2))
+        elif math_symbol == '*':
+            print(multiply(num1, num2))
 
-    elif math_symbol == '-':
+        elif math_symbol == '/':
+            print(divide(num1, num2))
 
-        print(subtract(num1, num2))
+        elif math_symbol == 'square':
+            print(square(num1))
 
-    elif math_symbol == '*':
-        print(multiply(num1, num2))
+        elif math_symbol == 'cube':
+            print(cube(num1))
 
-    elif math_symbol == '/':
-        print(divide(num1, num2))
+        elif math_symbol == 'power':
+            print(power(num1, num2))
 
-    elif math_symbol == 'square':
-        print(square(num1))
+        elif math_symbol == 'mod':
+            print(mod(num1, num2))
 
-    elif math_symbol == 'cube':
-        print(cube(num1))
-
-    elif math_symbol == 'power':
-        print(power(num1, num2))
-
-    elif math_symbol == 'mod':
-        print(mod(num1, num2))
+    except IndexError:
+        print("You dumb")
+        # continue
+    except ValueError:
+        # handle error here like print something iddnno
+        print('nooo')
 
 
